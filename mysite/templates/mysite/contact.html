@@ -1,6 +1,36 @@
 {% extends 'mysite/base.html' %}
 
 {% block content %}
-  <p>This is the contact</p>
-{% endblock %}
+  <div class="container">
+      <div class="row">
+          <div class="col-sm-6 mx-auto" style="margin-top: 70px">
+            <form method="post" action="{% url 'contact' % }">
+            {% csrf_token %}
+                  <div class="form-group row">
+                      <label for="example-email-input" class="col-2 col-form-label">Email</label>
+                      <div class="col-10">
+                          <input class="form-control" name="email"type="email" id="example-email-input">
+                      </div>
+                  </div>
+                  <div class="form-group row">
+                      <label for="example-email-input" class="col-2 col-form-label">Subject</label>
+                      <div class="col-10">
+                          <input class="form-control" name="subject" type="text">
+                      </div>
+                  </div>
+                  <div class="form-group row">
+                      <label for="example-email-input" class="col-2 col-form-label">Message</label>
+                      <div class="col-10">
+                          <textarea class="form-control" name="message"></textarea>
+                      </div>
+                  </div>
+                  <div class="pull-right">
+                      <button type="submit" class="btn btn-primary float-right">Submit</button>
+                  </div>
 
+              </form>
+          </div>
+      </div>
+
+  </div>
+{% endblock %}
