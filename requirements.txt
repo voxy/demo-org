@@ -2,3 +2,5 @@ Django==2.1.2
 jedi==0.13.1
 neovim==0.2.6
 pylint==2.1.1
+requests==2.21.0
+pudb==2018.1
